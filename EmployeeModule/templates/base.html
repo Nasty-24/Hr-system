@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BASE COMPLETE</title>
+    {% load static %}
+       <link rel="stylesheet" href="{% static 'style.css' %}">
+           <link rel="stylesheet" href="{% static 'bootstrap-5.3.2-dist/css/bootstrap.min.css' %}">
+
+</head>
+<body>
+
+
+{% if messages %}
+    {% for messages in messages %}
+     <p class="text-success text-center">{{message}}</p>
+
+    {% endfor %}
+{% endif %}
+
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

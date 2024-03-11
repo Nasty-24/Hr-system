@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+</head>
+<body>
+<h2>This is the records stored or saved about the company's employees data</h2>
+<a href="{% url 'employee_form' %}"><button>ADD NEW EMPLOYEE</button></a>
+<table border="2" bgcolor="aqua">
+    <thead>
+    <tr>
+        <td>FullName</td>
+        <td>Mobile</td>
+        <td>Position</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for employee in employee_list %}
+    <tr>
+        <td>{{employee.fullname}}</td>
+        <td>{{employee.mobile_no}}</td>
+        <td>{{employee.position}}</td>
+        <td>
+            <a href="{% url 'employee_update' employee.id %}"><button>UPDATE</button></a>
+            <a href="{% url 'employee_delete' employee.id %}"><button>DELETE</button></a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+</body>
+</html>
